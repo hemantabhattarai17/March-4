@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker | Hemanta Bhattarai</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="animated-bg"></div>
+  <div class="overlay-gradient"></div>
+
+  <header class="main-header">
+    <div class="logo-area">
+      <a href="index.html" class="home-link" aria-label="Go to home page">
+        <img src="profile_pic.jpg" alt="Hemanta Bhattarai" class="profile-pic" />
+      </a>
+      <div>
+        <h1>Hemanta Bhattarai</h1>
+        <p id="subtitle">Computer Science Student · Builder of Fun Things</p>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="lang-switcher">
+        <button id="langMenuToggle" class="pill-button lang-toggle" aria-label="Choose website language">
+          🌐 English
+        </button>
+        <div id="langMenu" class="lang-menu" aria-label="Language menu">
+          <button class="lang-option" data-lang="en">🇬🇧 English</button>
+          <button class="lang-option" data-lang="ne">🇳🇵 नेपाली</button>
+          <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+          <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+          <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+          <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
+        </div>
+      </div>
+      <button id="downloadPdf" class="pill-button" aria-label="Download this website as PDF">⬇ PDF</button>
+      <button id="themeToggle" class="pill-button" aria-label="Toggle dark/light theme">🌞 Light</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="section fade-section">
+      <div class="hero-content">
+        <h2 id="habitAppTitle">Habit Tracker App</h2>
+        <p id="habitAppIntro">
+          A focused view of your habits. Add what you care about, mark them done each day, and keep your streaks climbing.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section fade-section">
+      <h2 id="habitTitle">Habit Tracker</h2>
+      <p id="habitDesc">Create daily habits, mark them done, and keep your streaks alive.</p>
+      <div id="habitTracker" class="habit-tracker">
+        <div class="habit-form">
+          <input
+            type="text"
+            id="habitNameInput"
+            placeholder="Add a new habit (e.g., Code 30 minutes)"
+            aria-label="New habit name"
+          />
+          <button id="habitAddBtn" class="pill-button primary">Add</button>
+        </div>
+        <div id="habitList" class="habit-list" aria-live="polite"></div>
+        <p id="habitTip" class="habit-tip">
+          Streaks are counted per day. Mark a habit “Done today” once per day to keep it going.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

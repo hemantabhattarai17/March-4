@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hemanta Bhattarai | Interactive Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="theme-light">
+    <div class="animated-bg"></div>
+    <button class="scroll-top-btn" aria-label="Scroll to top">▲</button>
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Explore</h2>
+        <input
+          type="text"
+          id="site-search"
+          placeholder="Search the website..."
+          aria-label="Search the website"
+        />
+      </div>
+      <nav class="sidebar-nav">
+        <button class="sidebar-link" data-target="#recommended-movies">
+          🎬 Recommended Movies
+        </button>
+        <button class="sidebar-link" data-target="#recommended-music">
+          🎵 Recommended Music
+        </button>
+        <button class="sidebar-link" data-target="#projects-section">
+          🎮 Projects & Games
+        </button>
+      </nav>
+    </aside>
+
+    <main>
+      <header class="hero section fade-section" id="home">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Hi, I’m <span>Hemanta Bhattarai</span></h1>
+            <p class="subtitle">
+              A curious Computer Science student who loves building playful,
+              interactive web experiences.
+            </p>
+            <div class="hero-actions">
+              <button id="scroll-down-btn" class="primary-btn">
+                Scroll down to explore ↓
+              </button>
+              <button id="toggle-theme-btn" class="secondary-btn">
+                Toggle Dark / Light
+              </button>
+            </div>
+          </div>
+          <div class="hero-profile">
+            <img
+              src="profile_pic.jpg"
+              alt="Profile picture of Hemanta Bhattarai"
+              class="profile-pic"
+            />
+            <div class="hero-badge">
+              <span>Computer Science Student</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section fade-section" id="news-section">
+        <div class="section-inner">
+          <div class="section-header-with-action">
+            <h2>AI & Tech News</h2>
+            <button id="refresh-news-btn" class="secondary-btn small">
+              Refresh news
+            </button>
+          </div>
+          <p class="section-intro">
+            Fresh headlines about artificial intelligence and technology from
+            major newsrooms like The New York Times, Al Jazeera, and more.
+          </p>
+          <p id="news-status">Loading the latest AI & tech stories...</p>
+          <div id="news-grid" class="news-grid"></div>
+        </div>
+      </section>
+
+      <section class="section fade-section" id="skills-section">
+        <div class="section-inner">
+          <h2>Skills</h2>
+          <p class="section-intro">
+            A quick snapshot of the technologies and tools I enjoy working
+            with.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>Frontend</h3>
+              <p>HTML, CSS, JavaScript, React, responsive design, animations</p>
+            </div>
+            <div class="skill-card">
+              <h3>Backend</h3>
+              <p>Node.js, Express, REST APIs, basic database design</p>
+            </div>
+            <div class="skill-card">
+              <h3>CS Foundations</h3>
+              <p>Data structures, algorithms, problem solving, OOP</p>
+            </div>
+            <div class="skill-card">
+              <h3>Creative & Tools</h3>
+              <p>Git & GitHub, VS Code, Figma, tinkering with UI/UX ideas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-section" id="resume-section">
+        <div class="section-inner">
+          <h2>Resume Timeline</h2>
+          <p class="section-intro">
+            A fun, animated look at my journey so far (with a downloadable
+            resume).
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>Curious Kid → Tech Enthusiast</h3>
+                <span class="timeline-date">Early days</span>
+                <p>
+                  Playing with gadgets, breaking things (and learning to fix
+                  them), and wondering how software actually works.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>Computer Science Student</h3>
+                <span class="timeline-date">Present</span>
+                <p>
+                  Studying core CS topics while experimenting with web
+                  development, games, and interactive web apps like this one.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>Future Builder</h3>
+                <span class="timeline-date">Soon</span>
+                <p>
+                  Aiming to build useful, delightful software that people love
+                  to use.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="resume-download">
+            <a href="Fake-Resume.pdf" download class="primary-btn">
+              Download Resume (PDF)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-section" id="recommended-movies">
+        <div class="section-inner">
+          <h2>Recommended Movies</h2>
+          <p class="section-intro">
+            Some Nepali movies I recommend watching. You can play them directly
+            here.
+          </p>
+          <div class="cards-grid">
+            <article class="media-card">
+              <img src="darpan.jpg" alt="Darpan Chaya poster" />
+              <div class="media-info">
+                <h3>Darpan Chaya</h3>
+                <p>A classic emotional Nepali movie with memorable music.</p>
+                <button
+                  class="primary-btn open-video"
+                  data-video="https://www.youtube.com/embed/SQG-vIuCe_4?start=3700"
+                >
+                  Play in player
+                </button>
+              </div>
+            </article>
+            <article class="media-card">
+              <img src="oon.jpg" alt="Oonko Sweater poster" />
+              <div class="media-info">
+                <h3>Oonko Sweater</h3>
+                <p>A heartwarming story wrapped in nostalgia and warmth.</p>
+                <button
+                  class="primary-btn open-video"
+                  data-video="https://www.youtube.com/embed/lCgtmgiII7M?start=3393"
+                >
+                  Play in player
+                </button>
+              </div>
+            </article>
+            <article class="media-card">
+              <img src="dk.jpg" alt="Dimakh Kharab poster" />
+              <div class="media-info">
+                <h3>Dimakh Kharab</h3>
+                <p>Fun, chaos, and comedy — perfect for a chill evening.</p>
+                <button
+                  class="primary-btn open-video"
+                  data-video="https://www.youtube.com/embed/w1oGUb5Nw7w?start=5196"
+                >
+                  Play in player
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="video-player-wrapper">
+            <h3>Now Playing</h3>
+            <div class="video-frame">
+              <iframe
+                id="movie-player"
+                src=""
+                title="Movie player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <p class="video-placeholder">
+                Choose a movie above to start watching.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-section" id="recommended-music">
+        <div class="section-inner">
+          <h2>Recommended Music</h2>
+          <p class="section-intro">
+            A couple of tracks that always boost my mood while coding.
+          </p>
+          <div class="music-list">
+            <article class="music-item">
+              <img src="danza.jpg" alt="Danza Kuduro cover" />
+              <div class="music-info">
+                <h3>Danza Kuduro</h3>
+                <p>High-energy track that makes debugging way more fun.</p>
+                <audio
+                  controls
+                  class="music-player"
+                  data-title="Danza Kuduro"
+                >
+                  <source src="danza.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+                <div class="music-actions">
+                  <label>
+                    Volume
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.01"
+                      class="volume-slider"
+                    />
+                  </label>
+                  <a href="danza.mp3" download class="secondary-btn">
+                    Download
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="music-item">
+              <img src="gulabi.jpg" alt="Rang Saari Gulabi cover" />
+              <div class="music-info">
+                <h3>Rang Saari Gulabi</h3>
+                <p>A colorful melody perfect for creative coding sessions.</p>
+                <audio
+                  controls
+                  class="music-player"
+                  data-title="Rang Saari Gulabi"
+                >
+                  <source src="gulabi.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+                <div class="music-actions">
+                  <label>
+                    Volume
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.01"
+                      class="volume-slider"
+                    />
+                  </label>
+                  <a href="gulabi.mp3" download class="secondary-btn">
+                    Download
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-section" id="projects-section">
+        <div class="section-inner">
+          <h2>Projects & Games</h2>
+          <p class="section-intro">
+            Play two mini-games I built just for this portfolio!
+          </p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>Flappy Bird</h3>
+              <p>
+                Tap or press space to fly between the pipes. How far can you
+                go?
+              </p>
+              <canvas id="flappy-canvas" width="400" height="500"></canvas>
+              <button id="flappy-start-btn" class="primary-btn">
+                Start / Restart
+              </button>
+              <p class="game-status" id="flappy-status"></p>
+            </div>
+            <div class="project-card">
+              <h3>Hangman</h3>
+              <p>Guess the hidden word before the little character disappears.</p>
+              <div class="hangman-wrapper">
+                <canvas id="hangman-canvas" width="300" height="250"></canvas>
+                <div class="hangman-info">
+                  <p>Word: <span id="hangman-word"></span></p>
+                  <p>Wrong guesses: <span id="hangman-wrong"></span></p>
+                  <div id="hangman-letters" class="letters-grid"></div>
+                  <button id="hangman-restart-btn" class="secondary-btn">
+                    New Word
+                  </button>
+                  <p class="game-status" id="hangman-status"></p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card" id="student-project-card">
+              <h3>Student Feedback Database</h3>
+              <p>
+                Students can share their details and feedback. Entries are saved
+                into a small database that I can review and manage.
+              </p>
+              <form id="student-form" class="student-form">
+                <div class="field-row">
+                  <label>
+                    Name
+                    <input type="text" id="student-name" required />
+                  </label>
+                  <label>
+                    Phone
+                    <input type="tel" id="student-phone" required />
+                  </label>
+                </div>
+                <div class="field-row">
+                  <label>
+                    Major
+                    <input type="text" id="student-major" required />
+                  </label>
+                  <label>
+                    Year
+                    <select id="student-year" required>
+                      <option value="">Select year</option>
+                      <option>1st Year</option>
+                      <option>2nd Year</option>
+                      <option>3rd Year</option>
+                      <option>4th Year</option>
+                      <option>Graduate</option>
+                    </select>
+                  </label>
+                </div>
+                <label class="full-width">
+                  Feedback (optional)
+                  <textarea
+                    id="student-feedback"
+                    rows="3"
+                    placeholder="Share anything about your experience, interests, or ideas..."
+                  ></textarea>
+                </label>
+                <button type="submit" class="primary-btn">
+                  Submit feedback
+                </button>
+                <p id="student-form-status" class="game-status"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-section" id="location-weather-section">
+        <div class="section-inner">
+          <h2>Where I Am & Weather</h2>
+          <p class="section-intro">
+            A peek at my approximate location and what the weather is like.
+          </p>
+          <div class="location-weather-grid">
+            <div class="map-wrapper">
+              <h3>My Location (Approx.)</h3>
+              <iframe
+                src="https://www.google.com/maps?q=Kathmandu,Nepal&output=embed"
+                width="100%"
+                height="250"
+                style="border:0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="weather-wrapper">
+              <h3>Live Weather</h3>
+              <p id="weather-status">Fetching current weather...</p>
+              <div id="weather-details" class="weather-details hidden">
+                <p>
+                  <span>Temperature:</span>
+                  <strong id="weather-temp"></strong>
+                </p>
+                <p>
+                  <span>Condition:</span>
+                  <strong id="weather-description"></strong>
+                </p>
+                <p>
+                  <span>Wind Speed:</span>
+                  <strong id="weather-wind"></strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a href="admin.html" class="admin-open-btn" title="View student data (login required)">
+      Admin
+    </a>
+
+    <section class="chatbot-container">
+      <button id="chatbot-toggle" class="chat-toggle-btn">
+        Chat with AI Guide
+      </button>
+      <div class="chatbot-panel hidden" aria-label="AI chatbot">
+        <div class="chat-header">
+          <h3>AI Navigator</h3>
+          <button id="voice-toggle-btn" class="secondary-btn small">
+            🎤 Voice On/Off
+          </button>
+        </div>
+        <div id="chat-log" class="chat-log">
+          <div class="chat-message bot">
+            <p>
+              Hi! I’m your AI guide. Ask me things like:
+              <em>“Go to skills”, “Open movies”, “Toggle dark mode”, “Scroll
+              to top”, or “Play Flappy Bird”.</em>
+            </p>
+          </div>
+        </div>
+        <form id="chat-form" class="chat-form">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type a command or question..."
+            autocomplete="off"
+          />
+          <button type="submit" class="primary-btn small">Send</button>
+        </form>
+        <p id="voice-status" class="voice-status"></p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

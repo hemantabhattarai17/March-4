@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Data – Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body.admin-page {
+        background: #0f172a;
+        color: #e5e7eb;
+        min-height: 100vh;
+        padding: 2rem 1.5rem;
+      }
+      .admin-page main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .admin-page .admin-page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .admin-page .admin-page-header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+      .admin-page .admin-page-header a {
+        color: #93c5fd;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .admin-page .admin-page-header a:hover {
+        text-decoration: underline;
+      }
+      .admin-page .login-box {
+        background: rgba(30, 41, 59, 0.95);
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 360px;
+        margin: 3rem auto;
+        border: 1px solid rgba(71, 85, 105, 0.8);
+      }
+      .admin-page .login-box h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+      .admin-page .login-box label {
+        display: block;
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+        color: #94a3b8;
+      }
+      .admin-page .login-box input {
+        width: 100%;
+        padding: 0.5rem 0.65rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(71, 85, 105, 0.9);
+        background: rgba(15, 23, 42, 0.9);
+        color: #e5e7eb;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .admin-page .login-box button {
+        margin-top: 0.25rem;
+      }
+      .admin-page .data-section {
+        background: rgba(30, 41, 59, 0.95);
+        border-radius: 1rem;
+        padding: 1.25rem;
+        border: 1px solid rgba(71, 85, 105, 0.8);
+      }
+      .admin-page .data-section h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+      .admin-page .admin-table-wrapper {
+        overflow-x: auto;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(71, 85, 105, 0.8);
+        background: rgba(15, 23, 42, 0.6);
+      }
+      .admin-page #students-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.82rem;
+      }
+      .admin-page #students-table th,
+      .admin-page #students-table td {
+        padding: 0.5rem 0.6rem;
+        border-bottom: 1px solid rgba(71, 85, 105, 0.6);
+        text-align: left;
+        vertical-align: top;
+      }
+      .admin-page #students-table th {
+        background: rgba(15, 23, 42, 0.95);
+        color: #94a3b8;
+        font-weight: 500;
+      }
+      .admin-page .admin-action-btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.4rem;
+        border: 1px solid rgba(248, 113, 113, 0.8);
+        background: rgba(127, 29, 29, 0.5);
+        color: #fca5a5;
+        cursor: pointer;
+      }
+      .admin-page .admin-action-btn:hover {
+        background: rgba(127, 29, 29, 0.8);
+      }
+      .admin-page .status-msg {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        margin-top: 0.75rem;
+      }
+      .admin-page .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body class="admin-page theme-dark">
+    <main>
+      <div id="login-view">
+        <div class="login-box">
+          <h2>Student database access</h2>
+          <p class="status-msg" style="margin-bottom: 1rem;">
+            Enter username and password to view, edit, or delete student entries.
+          </p>
+          <form id="admin-login-form">
+            <label for="admin-username">Username</label>
+            <input type="text" id="admin-username" required autocomplete="username" />
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" required autocomplete="current-password" />
+            <button type="submit" class="primary-btn">Log in</button>
+            <p id="admin-login-status" class="status-msg"></p>
+          </form>
+        </div>
+      </div>
+
+      <div id="data-view" class="hidden">
+        <div class="admin-page-header">
+          <h1>Student feedback data</h1>
+          <div>
+            <a href="index.html">← Back to portfolio</a>
+            <span style="margin: 0 0.5rem;">|</span>
+            <button type="button" id="admin-logout-btn" class="secondary-btn small">Log out</button>
+          </div>
+        </div>
+        <div class="data-section">
+          <h2>All entries</h2>
+          <p class="status-msg">Double‑click a cell to edit. Use Delete to remove a row.</p>
+          <div class="admin-table-wrapper">
+            <table id="students-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Major</th>
+                  <th>Year</th>
+                  <th>Feedback</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p id="admin-data-status" class="status-msg"></p>
+        </div>
+      </div>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>
